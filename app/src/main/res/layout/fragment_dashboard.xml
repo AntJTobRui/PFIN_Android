@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#3E3E3E"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,13 +11,15 @@
 
     <TextView
         android:id="@+id/text_dashboard"
+        android:background="#3B3DAC"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="77dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="35sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,63 +28,116 @@
     <LinearLayout
         android:id="@+id/nameLayout"
         android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_height="72dp"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/titNom"
-            android:layout_width="17dp"
-            android:layout_height="wrap_content"
+            android:background="#ABB6F3"
+            android:layout_width="38dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Nombre: " />
+            android:gravity="center"
+            android:text="Nombre: "
+            android:textAlignment="center"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/mostrarNom"
+            android:background="#DDD"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:hint="Nombre" />
+            android:gravity="center"
+            android:hint="Nombre"
+            android:textAlignment="center"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ape1Layout"
         android:layout_width="match_parent"
-        android:layout_height="47dp"
+        android:layout_height="82dp"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/titApe1"
-            android:layout_width="17dp"
-            android:layout_height="wrap_content"
+            android:layout_width="38dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Primer apellido: " />
+            android:background="#ABB6F3"
+            android:gravity="center"
+            android:text="Primer apellido: "
+            android:textAlignment="center"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/mostratApe1"
+
+            android:background="#DDD"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:hint="Apellido" />
+            android:gravity="center"
+            android:hint="Apellido"
+            android:textAlignment="center"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ape2Layout"
         android:layout_width="match_parent"
-        android:layout_height="47dp"
+        android:layout_height="75dp"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/titApe2"
-            android:layout_width="16dp"
-            android:layout_height="wrap_content"
+            android:background="#ABB6F3"
+            android:layout_width="38dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Segundo apellido: " />
+            android:gravity="center"
+            android:text="Segundo apellido: "
+            android:textAlignment="center"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/mostrarApe2"
+            android:background="#DDD"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:hint="Apellido" />
+            android:gravity="center"
+            android:hint="Apellido"
+            android:textAlignment="center"
+            android:textSize="25sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/edadLayout"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/titEdad"
+            android:background="#ABB6F3"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Edad: "
+            android:textAlignment="center"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/mostrarEdad"
+            android:background="#DDD"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="Edad"
+            android:textAlignment="center"
+            android:textSize="25sp" />
     </LinearLayout>
 </LinearLayout>

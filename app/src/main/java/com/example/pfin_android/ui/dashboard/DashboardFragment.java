@@ -34,12 +34,14 @@ public class DashboardFragment extends Fragment {
         TextView nom = binding.mostrarNom;
         TextView ape1 = binding.mostratApe1;
         TextView ape2 = binding.mostrarApe2;
+        TextView edad = binding.mostrarEdad;
         if(HomeViewModel.getIdSel() > 0) {
             DBPersonas db = new DBPersonas(getContext());
             this.pers = db.mostrarDatos(HomeViewModel.getIdSel());
             nom.setText(this.pers.getNom());
             ape1.setText(this.pers.getApe1());
             ape2.setText(this.pers.getApe2());
+            edad.setText(""+com.example.fin_android.controlador.MyTools.calculaEdad(this.pers.getFec_nac()));
         }
         return root;
     }
