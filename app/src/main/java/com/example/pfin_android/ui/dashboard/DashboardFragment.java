@@ -4,15 +4,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.pfin_android.MainActivity;
 import com.example.pfin_android.databinding.FragmentDashboardBinding;
 import com.example.pfin_android.db.DBPersonas;
 import com.example.pfin_android.modelo.Persona;
+import com.example.pfin_android.ui.home.HomeFragment;
 import com.example.pfin_android.ui.home.HomeViewModel;
 
 public class DashboardFragment extends Fragment {
@@ -35,6 +39,7 @@ public class DashboardFragment extends Fragment {
         TextView ape1 = binding.mostratApe1;
         TextView ape2 = binding.mostrarApe2;
         TextView edad = binding.mostrarEdad;
+        Button atr = binding.button2;
         if(HomeViewModel.getIdSel() > 0) {
             DBPersonas db = new DBPersonas(getContext());
             this.pers = db.mostrarDatos(HomeViewModel.getIdSel());
@@ -43,6 +48,17 @@ public class DashboardFragment extends Fragment {
             ape2.setText(this.pers.getApe2());
             edad.setText(""+com.example.fin_android.controlador.MyTools.calculaEdad(this.pers.getFec_nac()));
         }
+        atr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HomeFragment frag = new HomeFragment();
+                FragmentTransaction fg = getActivity().getSupportFragmentManager().beginTransaction();
+                fg.replace(getId(), frag);
+                fg.commit();
+                //FragmentTransaction remove = fg.remove(this);
+                //remove.commit();
+            }
+        });
         return root;
     }
 

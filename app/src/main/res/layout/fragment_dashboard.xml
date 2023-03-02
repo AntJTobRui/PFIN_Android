@@ -9,21 +9,43 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <TextView
-        android:id="@+id/text_dashboard"
-        android:background="#3B3DAC"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="77dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="35sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="94dp">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="46dp"
+            android:layout_height="89dp"
+            android:text="C"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.025"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <TextView
+            android:id="@+id/text_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="#3B3DAC"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.081" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/nameLayout"
@@ -34,7 +56,7 @@
         <TextView
             android:id="@+id/titNom"
             android:background="#ABB6F3"
-            android:layout_width="38dp"
+            android:layout_width="25sp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
@@ -45,7 +67,7 @@
         <TextView
             android:id="@+id/mostrarNom"
             android:background="#DDD"
-            android:layout_width="wrap_content"
+            android:layout_width="35sp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
@@ -62,7 +84,7 @@
 
         <TextView
             android:id="@+id/titApe1"
-            android:layout_width="38dp"
+            android:layout_width="25sp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#ABB6F3"
@@ -75,7 +97,7 @@
             android:id="@+id/mostratApe1"
 
             android:background="#DDD"
-            android:layout_width="wrap_content"
+            android:layout_width="35sp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
@@ -93,7 +115,7 @@
         <TextView
             android:id="@+id/titApe2"
             android:background="#ABB6F3"
-            android:layout_width="38dp"
+            android:layout_width="25sp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
@@ -104,7 +126,7 @@
         <TextView
             android:id="@+id/mostrarApe2"
             android:background="#DDD"
-            android:layout_width="wrap_content"
+            android:layout_width="35sp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
@@ -120,10 +142,10 @@
 
         <TextView
             android:id="@+id/titEdad"
-            android:background="#ABB6F3"
-            android:layout_width="4dp"
+            android:layout_width="25sp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#ABB6F3"
             android:gravity="center"
             android:text="Edad: "
             android:textAlignment="center"
@@ -132,7 +154,7 @@
         <TextView
             android:id="@+id/mostrarEdad"
             android:background="#DDD"
-            android:layout_width="wrap_content"
+            android:layout_width="35sp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
@@ -140,4 +162,5 @@
             android:textAlignment="center"
             android:textSize="25sp" />
     </LinearLayout>
+
 </LinearLayout>

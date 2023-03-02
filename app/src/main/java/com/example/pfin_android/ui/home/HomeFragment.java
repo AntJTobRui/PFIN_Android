@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,7 @@ import com.example.pfin_android.databinding.FragmentHomeBinding;
 import com.example.pfin_android.db.DBPersonas;
 import com.example.pfin_android.modelo.ListaPersAdapter;
 import com.example.pfin_android.modelo.Persona;
+import com.example.pfin_android.ui.dashboard.DashboardFragment;
 
 import java.util.ArrayList;
 
@@ -44,6 +46,15 @@ public class HomeFragment extends Fragment {
         ListaPersAdapter adapter = new ListaPersAdapter(listPer);
         rvLista.setAdapter(adapter);
 
+        rvLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DashboardFragment frag = new DashboardFragment();
+                FragmentTransaction fg = getActivity().getSupportFragmentManager().beginTransaction();
+                fg.replace(getId(), frag);
+                fg.commit();
+            }
+        });
         return root;
     }
 
