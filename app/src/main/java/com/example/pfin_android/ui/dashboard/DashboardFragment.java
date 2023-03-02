@@ -55,8 +55,6 @@ public class DashboardFragment extends Fragment {
                 FragmentTransaction fg = getActivity().getSupportFragmentManager().beginTransaction();
                 fg.replace(getId(), frag);
                 fg.commit();
-                //FragmentTransaction remove = fg.remove(this);
-                //remove.commit();
             }
         });
         return root;

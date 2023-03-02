@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
         DBPersonas dbPersonas = new DBPersonas(getContext());
         listPer = dbPersonas.mostrarPersonas();
 
-        ListaPersAdapter adapter = new ListaPersAdapter(listPer);
+        ListaPersAdapter adapter = new ListaPersAdapter(listPer, getActivity());
         rvLista.setAdapter(adapter);
 
         rvLista.setOnClickListener(new View.OnClickListener() {
