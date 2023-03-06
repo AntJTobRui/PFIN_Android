@@ -1,5 +1,6 @@
 package com.example.pfin_android.db;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,8 +21,17 @@ public class DBPersonas extends DBHelper{
         this.context = context;
     }
 
-    public long insertar(){
-        return 0;
+    public long insertar(String mens){
+        long res = 0;
+        DBHelper dbHelper =  new DBHelper(this.context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("log_men", mens);
+
+        db.insert(TABLE_LOG, null, values);
+        //db.execSQL("INSERT INTO " + TABLE_LOG + " VALUES (" + mens +")");
+        return res;
     }
 
     public ArrayList<Persona> mostrarPersonas(){
@@ -70,5 +80,24 @@ public class DBPersonas extends DBHelper{
             cur.close();
         }
         return pers;
+    }
+
+    public ArrayList<String> mostrarLog(){
+        DBHelper dbHelper =  new DBHelper(this.context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ArrayList<String> listLog = new ArrayList<String>();
+        String mens = null;
+        Cursor cur = null;
+
+        cur = db.rawQuery("SELECT * FROM " + TABLE_LOG, null);
+        if(cur.moveToFirst()){
+            do{
+                mens = cur.getString(0);
+                listLog.add(mens);
+            }while(cur.moveToNext());
+            cur.close();
+        }
+        return listLog;
     }
 }

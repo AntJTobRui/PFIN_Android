@@ -12,6 +12,8 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NOM = "andro.db";
     public static final String TABLE_PERS = "t_pers";
 
+    public static final String TABLE_LOG = "t_log";
+
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NOM, null, DATABASE_VERSION);
     }
@@ -25,6 +27,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 "ape2 TEXT NOT NULL," +
                 "curso TEXT,"+
                 "fec_nac DATE)");
+
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_LOG + " (log_men TEXT)");
 
         sqLiteDatabase.execSQL("INSERT INTO " + TABLE_PERS +
                 "(nom, ape1, ape2, curso, fec_nac) " +

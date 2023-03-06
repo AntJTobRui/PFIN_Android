@@ -27,6 +27,11 @@ public class MyTools {
         return formatDate.format(fecha.getTime());
     }
 
+    public static String gregCalFecHorToString(GregorianCalendar fecha){
+        SimpleDateFormat formatDate = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        return formatDate.format(fecha.getTime());
+    }
+
     public static String gregorianCalendarToAmerican(GregorianCalendar fecha){
         SimpleDateFormat formatDate = new SimpleDateFormat("MM/dd/yyyy");
         return formatDate.format(fecha.getTime());

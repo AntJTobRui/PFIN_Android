@@ -19,6 +19,9 @@ import com.example.pfin_android.modelo.Persona;
 import com.example.pfin_android.ui.home.HomeFragment;
 import com.example.pfin_android.ui.home.HomeViewModel;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
@@ -47,6 +50,14 @@ public class DashboardFragment extends Fragment {
             ape1.setText(this.pers.getApe1());
             ape2.setText(this.pers.getApe2());
             edad.setText(""+com.example.fin_android.controlador.MyTools.calculaEdad(this.pers.getFec_nac()));
+
+            GregorianCalendar date = (GregorianCalendar) Calendar.getInstance();
+
+            db.insertar(com.example.fin_android.controlador.MyTools.gregCalFecHorToString(date) +
+                    " > Consultados los datos de " + this.pers.getNom() + " " + this.pers.getApe1());
+
+            System.out.println(com.example.fin_android.controlador.MyTools.gregCalFecHorToString(date) +
+                    " > Consultados los datos de " + this.pers.getNom() + " " + this.pers.getApe1());
         }
         atr.setOnClickListener(new View.OnClickListener() {
             @Override
